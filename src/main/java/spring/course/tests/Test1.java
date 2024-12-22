@@ -1,4 +1,4 @@
-package spring.course;
+package spring.course.tests;
 
 import spring.course.bean.Cat;
 import spring.course.bean.Dog;

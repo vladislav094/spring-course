@@ -1,4 +1,4 @@
-package spring.course;
+package spring.course.tests;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.course.bean.Dog;

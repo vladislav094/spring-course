@@ -1,24 +1,32 @@
 package spring.course.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Person {
 
+    //    Аннотация над полем не рекомендуется
+    //    @Autowired
     private Pet pet;
+
+    //    @Value("${person.surname}")
     private String surname;
+    //    @Value("${person.age}")
     private int age;
 
-    @Autowired
+    //    @Autowired
+//    public Person(@Qualifier("dog") Pet pet) {
     public Person(Pet pet) {
-        System.out.println("Person bean is created");
+        System.out.println("Person bean is created use constructor with argument");
         this.pet = pet;
     }
 
-    //    public Person() {
-//        System.out.println("Person bean is created");
-//    }
+    public Person() {
+        System.out.println("Person bean is created");
+    }
 
     public Pet getPet() {
         System.out.println("Class Person: get pet - ");
@@ -35,7 +43,9 @@ public class Person {
         return age;
     }
 
-    // pet -> setPet
+
+    //    @Autowired
+//    @Qualifier("dog")
     public void setPet(Pet pet) {
         System.out.println("Class Person: set pet object");
         this.pet = pet;
@@ -52,7 +62,8 @@ public class Person {
     }
 
     public void callYourPet() {
-        System.out.println("Hello, my lovely pet!");
+        System.out.println("- Hello, my lovely pet!");
+        System.out.print("Pet answer: ");
         pet.say();
     }
 }

@@ -2,7 +2,7 @@ package spring.course.bean;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Dog implements Pet {
 
     private String name;
