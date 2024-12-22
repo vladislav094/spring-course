@@ -6,11 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import spring.course.bean.Kitchen;
 
 @Configuration
-@ComponentScan("spring.course.di")
+@ComponentScan("spring.course")
 public class CourseConfiguration {
 
-    @Bean(name = "kitchen")
-    public Kitchen kitchen() {
-        return new Kitchen();
-    }
+//    @Bean(name = "kitchen")
+//    public Kitchen kitchen() {
+//        return new Kitchen();
+//    }
 }
