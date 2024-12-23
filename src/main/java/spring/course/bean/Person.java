@@ -5,16 +5,16 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component("personBean")
 public class Person {
 
     //    Аннотация над полем не рекомендуется
     //    @Autowired
     private Pet pet;
 
-    //    @Value("${person.surname}")
+    @Value("${person.surname}")
     private String surname;
-    //    @Value("${person.age}")
+    @Value("${person.age}")
     private int age;
 
     //    @Autowired
@@ -51,10 +51,10 @@ public class Person {
         this.pet = pet;
     }
 
-    public void setSurname(String surname) {
-        System.out.println("Class Person: set surname");
-        this.surname = surname;
-    }
+//    public void setSurname(String surname) {
+//        System.out.println("Class Person: set surname");
+//        this.surname = surname;
+//    }
 
     public void setAge(int age) {
         System.out.println("Class Person: set age");

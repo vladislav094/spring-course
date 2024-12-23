@@ -1,8 +1,11 @@
 package spring.course.bean;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class Dog implements Pet {
 
     private String name;
@@ -24,10 +27,13 @@ public class Dog implements Pet {
         System.out.println("Pet say: Bow-Wow");
     }
 
+    @PostConstruct
     public void init() {
         System.out.println("Dog init method");
     }
 
+
+    @PreDestroy
     public void destroy() {
         System.out.println("Dog destroy method");
     }

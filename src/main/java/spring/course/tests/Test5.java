@@ -2,6 +2,7 @@ package spring.course.tests;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import spring.course.bean.Person;
 import spring.course.bean.Pet;
 import spring.course.di.config.CourseConfig;
@@ -9,7 +10,10 @@ import spring.course.di.config.CourseConfig;
 public class Test5 {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(CourseConfig.class);
+//        AnnotationConfigApplicationContext context =
+//                new AnnotationConfigApplicationContext(CourseConfig.class);
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
 //        Person person = context.getBean("person", Person.class);
 //        person.callYourPet();
 
@@ -22,6 +26,7 @@ public class Test5 {
 
         System.out.println(cat);
         System.out.println(cat2);
+        System.out.println(person.getSurname());
         context.close();
     }
 }

@@ -1,13 +1,11 @@
 package spring.course.di.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.*;
 import spring.course.bean.*;
 
 @Configuration
 //@ComponentScan("spring.course")
+@PropertySource("classpath:application.properties")
 public class CourseConfig {
 
     @Bean
